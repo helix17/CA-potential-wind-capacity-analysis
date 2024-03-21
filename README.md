@@ -1,2 +1,20 @@
 # CA-potential-wind-capacity-analysis
-Project that analyses the current wind capacity of CA and finds potential windfarms that can be established based on potential wind capacity.
+Project that analyses the current wind capacity of CA and finds potential windfarms that can be established based on potential wind capacity. Explore [this Interactive Plot](https://helix17.github.io/CA-potential-wind-capacity-analysis/) with wind speeds, land price, potential capacity, total cost for a potential windfarm and currently installed windfarms. All these plots are handled with **multiple layers** which can be changed from the **layer control option in the right**. **Hovering** over the places will also show more details for that particular place with a popup.
+
+`Note: Due to the large size of the interactive map, it will a few seconds for it to load completely.`
+
+## Important Files
+- [windspeed_history.ipynb](https://github.com/helix17/CA-potential-wind-capacity-analysis/blob/main/Code/windspeed_history.ipynb): Notebook file with code for **scraping wind speed and processing** it. Also has code for calculating zipcode wise **installed wind capacity**. It also **plots the interactive maps**.
+- [Final_STAT_Project .ipynb](https://github.com/helix17/CA-potential-wind-capacity-analysis/blob/main/Code/Final_STAT_Project%20.ipynb): Notebook file with code for scraping **land price and processing** it. Contains the code for **plotting map for current wind turbines**. Calculates **Potential wind capacity** and makes a comprehensive analysis for the same. **Creates a comphrehensive structured dataset** based on all the data obtained.
+- [final_plot.html](https://github.com/helix17/CA-potential-wind-capacity-analysis/blob/main/Plots/final_plot.html): HTML file **containing interactive map** with multiple layers. These layers contain the following: Mean Annual Wind Speed, Cost of Land per Sq. Mile, Current Wind Turbines in CA, Potential Wind Capacity for Potential Windfarms and Total Cost for Potential Windfarms. These Maps can be switched using the layer control button to the right. **This has been stored as LFS due to its large size, due to which it can take longer to load the interactive map.**
+- [all_zipcodes_land_cost.csv](https://github.com/helix17/CA-potential-wind-capacity-analysis/blob/main/Obtained_Dataset/all_zipcodes_land_cost.csv): CSV file created by cleaning and merging data from multiple sources. This contains zipcodes, month-wise wind speed (mph), mean annual wind speed (mph), max wind speed (mph), population density (per Sq. Mile), area (Sq. Mile), installed capacity (MW) and average price of land (dollars per sq. mile). This has data for all 1689 zipcodes.
+- [potential_windfarms_data.csv](https://github.com/helix17/CA-potential-wind-capacity-analysis/blob/main/Obtained_Dataset/potential_windfarms_data.csv): CSV file created by cleaning and merging data from multiple sources and then analysing the installed wind capacity to obtain potential capacity, total cost etc. This contains zipcodes, month-wise wind speed (mph), mean annual wind speed (mph), max wind speed (mph), population density (per Sq. Mile), area (Sq. Mile), installed capacity (MW), average price including land and other costs (dollars per sq. mile), potential capacity (MW), difference b/w potential and installed capacity (MW), land required (sq. Mile) and total cost (dollars). **This has data for only the 142 zipcodes which could be potential windfarms.**
+
+
+## Navigating the Repository
+- **Code**: Python Notebook files with all the code.
+- **Obtained_Dataset:** CSV files containing data that has been created after merging all the retrieved and processed data. It also has pickle files in case the Python Notebook needs to be ran again in the future. 
+- **Plots:** Contains the individual plots and the final interactive plot that has been created.
+- **Reference_dataset:** Datasets that have been obtained from government and public sources. It has the zipcodes data and the current wind turbines installed in the US. This also has the GeoJSON which is used to plot wind turbines and also the zipcodes.
+- **.github/workflows:** Script for hosting the interactive map. **NOT FOR USE**
+- **docs:** HTML file of the interactive map for hosting it in GitHub. **NOT FOR USE**
